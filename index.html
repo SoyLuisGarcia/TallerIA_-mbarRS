@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller de IA Aplicada a los Negocios · Coparmex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-row">
+      <img src="assets/logo.webp" alt="Ámbar Rojo Studios">
+      <span class="brand-x">×</span>
+      <span class="brand-coparmex">Coparmex</span>
+      <div class="brand-rail"></div>
+      <span class="studio-tag">Ámbar Rojo Studios</span>
+    </div>
+    <nav class="tabs" id="tabNav">
+      <button class="tab-btn active" data-tab="inicio">Inicio</button>
+      <button class="tab-btn eval" data-tab="evaluacion">Evaluación</button>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ INICIO ============ -->
+  <section class="panel active" id="panel-inicio">
+    <p class="eyebrow">Taller de IA aplicada a los negocios</p>
+    <h1 class="headline">Tu cuaderno de trabajo</h1>
+    <p class="lede">Resuelve aquí los ejercicios del taller y tu evaluación final. <strong>Todo se guarda solo en este navegador</strong> y no se envía a ningún servidor hasta que tú decidas descargarlo o entregarlo.</p>
+
+
+    <div class="section-block">
+      <h2 class="section-title">Quién eres</h2>
+      <div class="grid2" style="margin-top:16px;">
+        <div>
+          <label class="field-label">Tu nombre</label>
+          <input type="text" placeholder="María González">
+        </div>
+        <div>
+          <label class="field-label">Empresa</label>
+          <input type="text" placeholder="Ferretería El Roble">
+        </div>
+        <div>
+          <label class="field-label">Tu rol o función</label>
+          <input type="text" placeholder="Atención a clientes y cotizaciones">
+        </div>
+        <div>
+          <label class="field-label">Giro del negocio</label>
+          <input type="text" placeholder="Venta de materiales de construcción">
+        </div>
+      </div>
+      <div style="margin-top:16px;">
+        <label class="field-label">La tarea que más tiempo te quita cada semana</label>
+        <textarea rows="3" placeholder="Hacer cotizaciones a mano una por una, me toma como 20 minutos cada una y hago 15 a la semana"></textarea>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2 class="section-title">Antes de empezar</h2>
+      <p class="section-caption">Ten abiertas y logueadas estas cinco. Si te falta alguna, avísale al facilitador <em>ahorita</em>, no en el bloque 3.</p>
+      <div class="tool-list">
+        <div class="tool-row"><b>ChatGPT</b><a href="https://chatgpt.com" target="_blank" rel="noopener">chatgpt.com</a></div>
+        <div class="tool-row"><b>Claude</b><a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></div>
+        <div class="tool-row"><b>Gemini</b><a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a></div>
+        <div class="tool-row"><b>Perplexity</b><a href="https://perplexity.ai" target="_blank" rel="noopener">perplexity.ai</a></div>
+        <div class="tool-row"><b>Canva</b><a href="https://canva.com" target="_blank" rel="noopener">canva.com</a></div>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <span></span>
+      <button class="btn primary" onclick="goTab('evaluacion')">Ir a Evaluación →</button>
+    </div>
+  </section>
+
+  <!-- ============ EVALUACIÓN ============ -->
+  <section class="panel" id="panel-evaluacion">
+    <p class="eyebrow">Instrumento de evaluación</p>
+    <h1 class="headline" style="font-size:clamp(30px,4.4vw,44px);">Evaluación del taller</h1>
+    <p class="lede">10 preguntas, unos 4-5 minutos. Tu opinión honesta es la que decide qué se conserva y qué se ajusta para el siguiente grupo.</p>
+
+    <div class="eval-head" style="margin-top:22px;">
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Avance</span><span id="progressPct">0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </div>
+
+    <form id="evalForm">
+
+      <!-- SECCIÓN 1 -->
+      <div class="bloque">
+        <h2 class="bloque-title"><span class="sq"></span>Sección 1 · Qué te llevas</h2>
+
+        <div class="q" data-q="p1">
+          <div class="q-num">Pregunta 1 · Respuesta abierta</div>
+          <p class="q-text">En una frase: ¿qué tipo de información NUNCA subirías a una herramienta de IA pública?</p>
+          <textarea class="open-q short" rows="2" placeholder="Escribe tu respuesta en una línea..."></textarea>
+        </div>
+
+        <div class="q" data-q="p2">
+          <div class="q-num">Pregunta 2 · Respuesta abierta</div>
+          <p class="q-text">Un compañero te dice: «la IA ya me dio el dato, lo mando así». ¿Qué le contestas?</p>
+          <textarea class="open-q short" rows="2" placeholder="Una o dos líneas..."></textarea>
+        </div>
+
+        <div class="q" data-q="p3">
+          <div class="q-num">Pregunta 3 · Respuesta abierta</div>
+          <p class="q-text">Con tus palabras: ¿cuál es la diferencia entre usar la IA a mano cada vez y automatizar el proceso completo?</p>
+          <textarea class="open-q short" rows="2" placeholder="Una o dos líneas..."></textarea>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 2 -->
+      <div class="bloque">
+        <h2 class="bloque-title"><span class="sq"></span>Sección 2 · Qué produjiste</h2>
+
+        <div class="q" data-q="p4">
+          <div class="q-num">Pregunta 4</div>
+          <p class="q-text">¿Te llevas algo hecho hoy que puedas usar en tu trabajo esta semana?</p>
+          <div class="chip-row" data-options='["Sí, ya quedó listo","Sí, pero necesito terminarlo","No alcancé a producir nada"]'></div>
+          <div class="conditional-field" id="p4-conditional" style="display:none; margin-top:14px;">
+            <label class="field-label">Si contestaste sí: ¿qué es?</label>
+            <input type="text" id="p4-detail" placeholder="Ej. una plantilla de cotización automática">
+          </div>
+        </div>
+
+        <div class="q" data-q="p5">
+          <div class="q-num">Pregunta 5</div>
+          <p class="q-text">De todo lo que hiciste hoy, ¿qué actividad te sirvió más?</p>
+          <div class="chip-row" data-options='["Cachar a la IA inventando datos","El semáforo de qué se puede subir y qué no","Comparar las 4 herramientas con la misma pregunta","Reescribir mi propio prompt (antes y después)","El laboratorio: producir algo de mi trabajo","Armar mi hoja de ruta a 30/60/90 días"]'></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 3 -->
+      <div class="bloque">
+        <h2 class="bloque-title"><span class="sq"></span>Sección 3 · Cómo estuvo</h2>
+
+        <div class="q" data-q="p6">
+          <div class="q-num">Pregunta 6 · Escala 0-10</div>
+          <p class="q-text">¿Qué tan probable es que le recomiendes este taller a otro empresario o colega?</p>
+          <div class="nps-row" id="nps-p6"></div>
+          <div class="nps-scale-labels"><span>Nada probable</span><span>Muy probable</span></div>
+        </div>
+
+        <div class="q" data-q="p7">
+          <div class="q-num">Pregunta 7 · Matriz Likert</div>
+          <p class="q-text">Califica tu satisfacción con cada aspecto del taller:</p>
+          <div style="overflow-x:auto;">
+          <table class="matrix">
+            <tr><th style="text-align:left;"></th><th>Muy<br>insatisfecho</th><th>Insatisfecho</th><th>Neutral</th><th>Satisfecho</th><th>Muy<br>satisfecho</th></tr>
+            <tr class="matrix-row" data-row="claridad"><td class="row-label">Claridad del instructor y dominio del tema</td></tr>
+            <tr class="matrix-row" data-row="demos"><td class="row-label">Utilidad de las demos en vivo</td></tr>
+            <tr class="matrix-row" data-row="cuaderno"><td class="row-label">El cuaderno digital de trabajo</td></tr>
+            <tr class="matrix-row" data-row="balance"><td class="row-label">Equilibrio entre explicación y práctica</td></tr>
+            <tr class="matrix-row" data-row="instalaciones"><td class="row-label">Instalaciones y proyección</td></tr>
+            <tr class="matrix-row" data-row="logistica"><td class="row-label">Organización y logística de Coparmex</td></tr>
+          </table>
+          </div>
+        </div>
+
+        <div class="q" data-q="p8">
+          <div class="q-num">Pregunta 8</div>
+          <p class="q-text">¿Cómo sentiste el ritmo de la sesión?</p>
+          <div class="chip-row" data-options='["Muy acelerado, me costó seguirlo","Adecuado","Muy lento, sobró tiempo"]'></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 4 -->
+      <div class="bloque">
+        <h2 class="bloque-title"><span class="sq"></span>Sección 4 · Qué sigue</h2>
+
+        <div class="q" data-q="p9">
+          <div class="q-num">Pregunta 9 · Respuesta abierta</div>
+          <p class="q-text">Si pudieras cambiarle una cosa al taller, ¿cuál sería?</p>
+          <textarea class="open-q" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+        </div>
+
+        <div class="q" data-q="p10">
+          <div class="q-num">Pregunta 10 · Selección múltiple</div>
+          <p class="q-text">¿Qué te interesaría después de este taller?</p>
+          <div class="checkbox-col" id="checkbox-p10">
+            <label class="checkbox-item"><input type="checkbox" value="Una segunda sesión técnica para construir automatizaciones en vivo"><span>Una segunda sesión técnica para construir automatizaciones en vivo</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Que revisen un proceso de mi empresa (diagnóstico sin costo)"><span>Que revisen un proceso de mi empresa (diagnóstico sin costo)</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Recibir plantillas y tips por correo"><span>Recibir plantillas y tips por correo</span></label>
+            <label class="checkbox-item"><input type="checkbox" value="Nada por ahora, con esto me alcanza"><span>Nada por ahora, con esto me alcanza</span></label>
+          </div>
+          <div class="conditional-field" id="p10-conditional" style="display:none; margin-top:16px;">
+            <p class="section-caption" style="margin-bottom:14px;">Déjanos tus datos para dar seguimiento:</p>
+            <div class="grid2">
+              <div><label class="field-label">Nombre</label><input type="text" id="p10-nombre" placeholder="Tu nombre"></div>
+              <div><label class="field-label">Empresa</label><input type="text" id="p10-empresa" placeholder="Nombre de tu empresa"></div>
+            </div>
+            <div style="margin-top:16px;"><label class="field-label">WhatsApp o correo</label><input type="text" id="p10-contacto" placeholder="10 dígitos o correo@ejemplo.com"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-nav" style="border-top:none; padding-top:0; margin-top:0;">
+        <button class="btn" type="button" onclick="goTab('inicio')">← Atrás</button>
+        <span></span>
+      </div>
+
+      <div class="eval-submit">
+        <h2 class="section-title" style="margin-bottom:8px;">¿Todo listo?</h2>
+        <p>Puedes dejar preguntas en blanco si no aplican. Al enviar, tus respuestas se arman en un archivo que puedes descargar.</p>
+        <button type="submit" class="btn gradient">Enviar evaluación</button>
+      </div>
+    </form>
+
+    <div class="thanks" id="thanksPanel">
+      <div class="mark">✓</div>
+      <h2>¡Gracias por tu evaluación!</h2>
+      <p>Tus respuestas quedaron listas. Descárgalas para adjuntarlas al reporte del taller, o entrégalas directamente al facilitador.</p>
+      <div class="actions">
+        <button class="btn primary" onclick="downloadResponses()">Descargar respuestas (.txt)</button>
+        <button class="btn" onclick="resetForm()">Enviar otra respuesta</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
